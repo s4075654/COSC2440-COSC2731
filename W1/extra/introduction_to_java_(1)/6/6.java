@@ -40,23 +40,21 @@ final class ProgramThatPromptsTheUserToEnterTheCenterCoordinatesAndRadiusesOfTwo
 	catch (InputMismatchException exception)
 	  {
 	  }
-	ENTER.close();
 	return circle;
      }
    final private static void determinesWhetherTheSecondCircleIsInsideTheFirstOrOverlapsWithTheFirst(final Circle[] TWO_CIRCLES)
      {
 	final double THE_DISTANCE_BETWEEN_TWO_CENTERS = Math.sqrt(Math.pow(TWO_CIRCLES[0].theCenterCoordinates.xCoordinate - TWO_CIRCLES[1].theCenterCoordinates.xCoordinate, 2) + Math.pow(TWO_CIRCLES[0].theCenterCoordinates.yCoordinate - TWO_CIRCLES[1].theCenterCoordinates.yCoordinate, 2));
-	if (THE_DISTANCE_BETWEEN_TWO_CENTERS <= Math.abs(TWO_CIRCLES[0].radius - TWO_CIRCLES[1].radius))
+	switch (THE_DISTANCE_BETWEEN_TWO_CENTERS)
 	  {
-	       System.out.println("The second circle is inside the first.");
-	  }
-	    else if (THE_DISTANCE_BETWEEN_TWO_CENTERS <= TWO_CIRCLES[0].radius + TWO_CIRCLES[1].radius)
-	  {
-	       System.out.println("Overlaps with the first.");
-	  }
-	    else 
-	  {
-	       System.out.println("Cover.");
+	   case double theDistanceBetweenTwoCenters when theDistanceBetweenTwoCenters <= Math.abs(TWO_CIRCLES[0].radius - TWO_CIRCLES[1].radius):
+	     System.out.println("The second circle is inside the first.");
+	     break;
+	   case double theDistanceBetweenTwoCenters when (theDistanceBetweenTwoCenters <= TWO_CIRCLES[0].radius + TWO_CIRCLES[1].radius):
+	     System.out.println("Overlaps with the first.");
+	     break;
+	   default:
+	     System.out.println("Cover.");
 	  }
      }
    

@@ -8,10 +8,12 @@ final class ProgramThatDisplaysAllTheNumbersFrom100To200
 	       {
 		  break;
 	       }
-	     if ((theNumber % 5 == 0 || theNumber % 6 == 0) && !(theNumber % 5 == 0 && theNumber % 6 == 0) && (theNumber <= 200))
+	     switch (theNumber)
 	       {
-		  System.out.printf("%d ", (short)theNumber);
+		case final char THE_NUMBER when ((THE_NUMBER % 5 == 0 || THE_NUMBER % 6 == 0) && !(THE_NUMBER % 5 == 0 && THE_NUMBER % 6 == 0) && (THE_NUMBER <= 200)):
+		  System.out.printf("%d ", (short)THE_NUMBER);
 		  ++number;
+		default:
 	       }
 	  }
 	return theNumber;

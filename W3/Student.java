@@ -58,31 +58,6 @@ public class Student {
      }   
 }
 
-final class FullTimeStudent implements Researcher
-{
-   final private class FullTime extends Student implements Member
-     {
-	private Project oneResearchProject;
-	
-	final public Project getOneResearchProject()
-	  {
-	     return oneResearchProject;
-	  }
-	
-	final public void setOneResearchProject(final Project ONE_RESEARCH_PROJECT)
-	  {
-	     this.oneResearchProject = ONE_RESEARCH_PROJECT;
-	  }
-   
-	final public void optionallyJoinOneResearchProject(final Project ONE_RESEARCH_PROJECT)
-	  {
-	     this.oneResearchProject = ONE_RESEARCH_PROJECT;
-	  }
-     }
-   
-   final FullTime FULL_TIME = new FullTime();
-}
-
 final class PartTime extends Student
 {
    private Duration theMinimum;

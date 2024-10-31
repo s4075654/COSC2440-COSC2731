@@ -5,12 +5,12 @@ final class ProgramThatReadsAnUnspecifiedNumberOfScoresInOneInputAndDeterminesHo
 	long[] howManyScores = new long[2];
 	for (final String SCORE: AN_UNSPECIFIED_NUMBER_OF_SCORES_IN_ONE_INPUT)
 	  {
-	     if (SCORE.compareTo("the average") >= 0)
+	     switch (SCORE)
 	       {
+		case String score when (SCORE.compareTo("the average") >= 0):
 		  ++howManyScores[0];
-	       }
-	     else 
-	       {
+		  break;
+		default:
 		  ++howManyScores[1];
 	       }
 	  }

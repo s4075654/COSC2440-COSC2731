@@ -26,12 +26,11 @@ final class ProgramThatDeterminesIfAListIsAlreadySortedInIncreasingOrder
      {
 	for (int theElementsInTheList = 0; theElementsInTheList < THE_LIST.size(); theElementsInTheList += 2)
 	  {
-	     if (theElementsInTheList + 1 < THE_LIST.size())
+	     switch (theElementsInTheList)
 	       {
-		  if (THE_LIST.get(theElementsInTheList).compareTo(THE_LIST.get(theElementsInTheList + 1)) > 0)
-		    { 
-		       return false;
-		    }
+		case final int THE_ELEMENTS_IN_THE_LIST when (THE_ELEMENTS_IN_THE_LIST + 1 < THE_LIST.size() && THE_LIST.get(THE_ELEMENTS_IN_THE_LIST).compareTo(THE_LIST.get(THE_ELEMENTS_IN_THE_LIST + 1)) > 0):
+		  return false;
+		default:
 	       }
 	  }
 	return true;

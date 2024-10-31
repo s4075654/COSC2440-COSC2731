@@ -11,23 +11,20 @@ final class ProgramThatRepeatedlyPromptsTheUserToEnterAPositiveIntegerAndChecksW
    
    final private static Integer checksWhetherTheNumberIsDivisibleByBoth5And6(final Integer THE_NUMBER)
      {
-	if (THE_NUMBER <= 0)
+	switch (THE_NUMBER)
 	  {
+	   case Integer theNumber when theNumber <= 0:
 	     return 0;
-	  }
-	if (THE_NUMBER % 5 == 0 && THE_NUMBER % 6 == 0)
-	  {
+	   case Integer theNumber when (theNumber % 5 == 0 && theNumber % 6 == 0):
 	     System.out.println("The number is divisible by both 5 and 6.");
-	  }
-	else if (THE_NUMBER % 5 == 0 || THE_NUMBER % 6 == 0)
-	  {
+	     break;
+	   case Integer theNumber when (theNumber % 5 == 0 || theNumber % 6 == 0):
 	     System.out.println("Just one of them.");
-	  }
-	else 
-	  {
+	     break;
+	   default:
 	     System.out.println("Neither of them.");
 	  }
-	return promptTheUserToEnterAPositiveInteger();
+	return promptTheUserToEnterAPositiveInteger();	
      }
    
    public static void main(String args[])

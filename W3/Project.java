@@ -1,6 +1,8 @@
 package problem4;
 
 import problem_4.Member;
+import java.util.List;
+import java.util.LinkedList;
 
 /**
  * @author COSC2440 Teaching Team
@@ -11,19 +13,19 @@ public class Project {
     private String name;
     private double budget;
     private Lecturer leader;
-    private Member[] members;
+    private List<Member> members;
     private final long MAX_MEMBERS = Long.MAX_VALUE;
     private int memberCount = 0;
 
     public Project() {
         this.name = "Default";
         this.budget = 0;
-        members = new Member[(int)MAX_MEMBERS];
+        members = new LinkedList<Member>();
     }
     public Project(String name, double budget) {
         this.name = name;
         this.budget = budget;
-        members = new Member[(int)MAX_MEMBERS];
+        members = new LinkedList<Member>();
     }
    
    final public String getName()
@@ -61,12 +63,12 @@ public class Project {
 	this.leader = leader;
      }
    
-   final public Member[] getMembers()
+   final public List<Member> getMembers()
      {
 	return members;
      }
    
-   final public void setMembers(Member[] members)
+   final public void setMembers(List<Member> members)
      {
 	this.members = members;
      }
@@ -115,7 +117,7 @@ public class Project {
            Assume duplication has been handled when adding a new member
            so we do not have to check it
          */
-        members[memberCount++] = newMember;
+        members.add(newMember);
         return true;
     }
 
@@ -128,9 +130,7 @@ public class Project {
         System.out.println("Leader: " + leader);
 
         // display regular members
-        for(int i = 0; i < memberCount; i++) {
-            System.out.printf("Member #%d: " + members[i] + "\n", i + 1);
-        }
+        System.out.println(members);
     }
    
    final public String toString()

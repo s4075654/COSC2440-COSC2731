@@ -52,12 +52,12 @@ final class ProgramThatPromptsTheUserToEnterAYearAndAStringOfThreeCharactersForA
 		  break;
 	     
 		case "Feb":
-		  if ((YEAR % 4 == 0 && YEAR % 100 != 0) || (YEAR % 100 == 0 && YEAR % 400 == 0))
+		  switch (YEAR)
 		    {
+		     case long year when ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)):
 		       System.out.println(29);
-		    }
-		  else 
-		    {
+		       break;
+		     default:
 		       System.out.println(28);
 		    }
 		  break;

@@ -180,4 +180,9 @@ public class Lecturer implements Member, Researcher {
         return String.format("Id: %s, Name: %s, Rank: %s",
                 employeeId, fullName, rank);
     }
+
+    final public boolean considerEqual(Lecturer instance)
+       {
+	  return (employeeId == instance.employeeId) ? true : false;
+       }
 }

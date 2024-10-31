@@ -9,13 +9,13 @@ final class ProgramThatReadsAListOfIntegersBetween1And100ThenCountsTheOccurrence
 	HashMap<Integer, Long> theOccurrencesOfEach = new HashMap<>();
 	for (Integer integer: A_LIST_OF_INTEGERS_BETWEEN_1_AND_100)
 	  {
-	     if (integer == 0)
+	     switch (integer)
 	       {
+		case final Integer INTEGER when (INTEGER == 0):
 		  return theOccurrencesOfEach;
-	       }
-	     if (integer >= 1 && integer <= 100)
-	       {
-		  theOccurrencesOfEach.put(integer, theOccurrencesOfEach.getOrDefault(integer, (long)0) + 1);
+		case final Integer INTEGER when (INTEGER >= 1 && INTEGER <= 100):
+		  theOccurrencesOfEach.put(INTEGER, theOccurrencesOfEach.getOrDefault(INTEGER, (long)0) + 1);
+		default:
 	       }
 	  }
 	return null;
@@ -35,12 +35,14 @@ final class ProgramThatReadsAListOfIntegersBetween1And100ThenCountsTheOccurrence
 					   long occurrencesOfEach = each.getValue();
 					   System.out.printf("Integer: %d\n", integer);
 					   System.out.printf("The occurrences: %d ", occurrencesOfEach);
-					   if (occurrencesOfEach > 1)
+					   switch (occurrencesOfEach)
 					     {
+					      case final long OCCURRENCES_OF_EACH when OCCURRENCES_OF_EACH > 1:
 						System.out.printf("times");
+					      default:
 					     }
 					   System.out.println('\n');
 					}
-							 );
+								    );
      }
 }
