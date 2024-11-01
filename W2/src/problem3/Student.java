@@ -88,56 +88,51 @@ final class PartTime extends Student
    private Duration theMinimum;
    private Duration theMaximumHoursTheySpendOnInstructor;
    
-   private PartTime(final PartTimeStudent PART_TIME_STUDENT, final boolean DEFAULT)
+   private PartTime(final Duration THE_MINIMUM, final Duration THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR)
      {
-	super();
-	this.theMinimum = PART_TIME_STUDENT.theMinimum;
-	this.theMaximumHoursTheySpendOnInstructor = PART_TIME_STUDENT.theMaximumHoursTheySpendOnInstructor;
+	this.theMinimum = THE_MINIMUM;
+	this.theMaximumHoursTheySpendOnInstructor = THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR;
      }
-   private PartTime(final PartTimeStudent PART_TIME_STUDENT)
+   
+   private PartTime(final String STUDENT_ID, final String FULL_NAME, final String MAJOR, final Duration THE_MINIMUM, final Duration THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR)
      {
-	super(PART_TIME_STUDENT.studentId, PART_TIME_STUDENT.fullName, PART_TIME_STUDENT.major);
-	this.theMinimum = PART_TIME_STUDENT.theMinimum;
-	this.theMaximumHoursTheySpendOnInstructor = PART_TIME_STUDENT.theMaximumHoursTheySpendOnInstructor;
+	super(STUDENT_ID, FULL_NAME, MAJOR);
+	this.theMinimum = THE_MINIMUM;
+	this.theMaximumHoursTheySpendOnInstructor = THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR;
      }
  
-   final private static class PartTimeStudent
+   final private class PartTimeStudent
      {
-	private String studentId;
-	private String fullName;
-	private String major;
-	private Duration theMinimum;
-	private Duration theMaximumHoursTheySpendOnInstructor;
+	private PartTime student;
 	private static long thisCounter = 0;
 	
 	public PartTimeStudent(final Duration THE_MINIMUM, final Duration THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR)
 	  {
-	     this.theMinimum = THE_MINIMUM;
-	     this.theMaximumHoursTheySpendOnInstructor = THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR;
+	     student = new PartTime(THE_MINIMUM, THE_MAXIMUM_HOURS_THEY_SPEND_ON_INSTRUCTOR);
 	     ++thisCounter;
 	  }
 	
 	final public PartTimeStudent studentId(final String STUDENT_ID)
 	  {
-	     this.studentId = STUDENT_ID;
+	     student.setStudentId(STUDENT_ID);
 	     return this;
 	  }
 	
 	final public PartTimeStudent fullName(final String FULL_NAME)
 	  {
-	     this.fullName = FULL_NAME;
+	     student.setFullName(FULL_NAME);
 	     return this;
 	  }
 	
 	final public PartTimeStudent major(final String MAJOR)
 	  {
-	     this.major = MAJOR;
+	     student.setMajor(MAJOR);
 	     return this;
 	  }
 	
 	final public PartTime partTime()
 	  {
-	     return (studentId.isEmpty() && fullName.isEmpty() && major.isEmpty()) ? new PartTime(this, true) : new PartTime(this);
+	     return student;
 	  }
 	
 	final public static long count()
