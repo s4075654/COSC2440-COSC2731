@@ -31,7 +31,6 @@ final public class Lecturer implements Member
    /** @see java.lang
     * @param p a project
     * @return always possible for a lecturer to join a project */
-   @Override
    final public boolean joinProject(Project p)
      {
 	/** @see java.lang */
