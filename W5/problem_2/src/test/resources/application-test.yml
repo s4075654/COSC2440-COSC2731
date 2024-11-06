@@ -1,0 +1,10 @@
+ebean:
+      test:
+      	   useDocker: false
+      	   platform: sqlite
+	   ddlMode: none
+	   dbName: university.db
+	   sqlite:
+	   	  username:
+		  password:
+		  url: university.db

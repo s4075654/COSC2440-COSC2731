@@ -1,0 +1,7 @@
+datasource:
+	   db:
+	      username:
+	      password:
+	      databaseUrl: jdbc:sqlite:university.db
+	      databaseDriver: org.xerial.sqlite-jdbc
+	      	      
