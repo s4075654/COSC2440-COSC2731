@@ -1,7 +1,6 @@
 datasource:
-	   db:
-	      username:
-	      password:
-	      databaseUrl: jdbc:sqlite:university.db
-	      databaseDriver: org.xerial.sqlite-jdbc
-	      	      
+	   an_sqlite_database:
+	      username: s4075654
+	      password: G2#duonglong
+	      url: jdbc:sqlite:university.db
+	      driver: org.sqlite.JDBC

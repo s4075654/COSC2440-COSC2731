@@ -4,36 +4,34 @@ import io.ebean.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.Size;
+import java.util.ArrayList;
+import io.ebean.Database;
+import io.ebean.DatabaseBuilder;
 import io.ebean.DB;
 import java.util.stream.Stream;
 
-final public class Problem2
+public class Problem2
 {
    @Entity
      @Table(name = "students")
-   private record Student(
-			  @Id @Column(name = "id") Integer id,
-			  StringBuilder fullName,
-			  StringBuilder major
+   public record Student(
+			  @Id Integer id,
+			  @Size(max = 50) ArrayList<Character> fullName,
+			  @Size(max = 50) ArrayList<Character> major
 			  )
 	 {
-	    private Student
-	      {
-		 if (fullName.length() == 0)
-		   {
-		      fullName = new StringBuilder(50);
-		   }
-		 if (major.length() == 0)
-		   {
-		      major = new StringBuilder(50);
-		   }
-	      }
 	 }
-       
+	    
    public static void main(String[] args)
      {
-	DB.getDefault();
+	final Database AN_SQLITE_DATABASE = Database.builder()
+	  .name("an_sqlite_database")
+	    .loadFromProperties()
+	      .defaultDatabase(true)
+		.addClass(Student.class)
+		  .build();
+	
 	try (Stream<Student> studentRecords = DB.find(Student.class)
 	     .findStream())
 	  {
