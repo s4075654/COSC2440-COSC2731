@@ -18,3 +18,10 @@ updates:
       interval: "daily"
     registries:
       - github-octocat
+
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    registries:
+      - github-octocat
