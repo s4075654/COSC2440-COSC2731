@@ -29,20 +29,22 @@ final class ProgramThatReadsAListOfIntegersBetween1And100ThenCountsTheOccurrence
 	     aListOfIntegersBetween1And100.add(Integer.parseInt(integerBetween1And100));
 	  }
 	final HashMap<Integer, Long> THE_OCCURRENCES_OF_EACH = readsAListOfIntegersBetween1And100ThenCountsTheOccurrencesOfEach(aListOfIntegersBetween1And100);
-	THE_OCCURRENCES_OF_EACH.entrySet().parallelStream().forEach(each ->
-					{
-					   Integer integer = each.getKey();
-					   long occurrencesOfEach = each.getValue();
-					   System.out.printf("Integer: %d\n", integer);
-					   System.out.printf("The occurrences: %d ", occurrencesOfEach);
-					   switch (occurrencesOfEach)
-					     {
-					      case final long OCCURRENCES_OF_EACH when OCCURRENCES_OF_EACH > 1:
-						System.out.printf("times");
-					      default:
-					     }
-					   System.out.println('\n');
-					}
-								    );
+	THE_OCCURRENCES_OF_EACH.entrySet()
+	  .parallelStream()
+	    .forEach(each ->
+		     {
+			Integer integer = each.getKey();
+			long occurrencesOfEach = each.getValue();
+			System.out.printf("Integer: %d\n", integer);
+			System.out.printf("The occurrences: %d ", occurrencesOfEach);
+			switch (occurrencesOfEach)
+			  {
+			   case final long OCCURRENCES_OF_EACH when OCCURRENCES_OF_EACH > 1:
+			     System.out.printf("times");
+			   default:
+			  }
+			System.out.println('\n');
+		     }
+		     );
      }
 }

@@ -12,12 +12,12 @@ final public class Lecturer implements Member
    final private boolean leadProject(Project p)
      {
 	/** @see java.lang */
-	switch (research_project)
+	return switch (research_project)
 	  {
 	     /** @see java.lang */
 	   case true:
 	     /** @see java.lang */
-	     return false;
+	     yield false;
 	     /** @see java.lang */
 	   case false:
 	     /** @see java.lang */
@@ -25,8 +25,8 @@ final public class Lecturer implements Member
 	     /** @see java.lang */
 	     research_project = true;
 	     /** @see java.lang */
-	     return research_project;
-	  }
+	     yield research_project;
+	  };
      }
    /** @see java.lang
     * @param p a project
