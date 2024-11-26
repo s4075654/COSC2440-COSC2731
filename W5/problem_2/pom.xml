@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database</groupId>
-  <artifactId>problem_2</artifactId>
+  <artifactId>problem-2</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>

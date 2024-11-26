@@ -32,10 +32,10 @@ public class Problem2
 		.addClass(Student.class)
 		  .build();
 	
-	try (Stream<Student> studentRecords = DB.find(Student.class)
+	try (final Stream<Student> STUDENT_RECORDS = DB.find(Student.class)
 	     .findStream())
 	  {
-	     studentRecords.parallel()
+	     STUDENT_RECORDS.parallel()
 	       .forEach(studentRecord -> System.out.println(studentRecord));
 	  }
      }
