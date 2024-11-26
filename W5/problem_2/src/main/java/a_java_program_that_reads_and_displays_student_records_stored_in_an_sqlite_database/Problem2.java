@@ -16,9 +16,9 @@ public class Problem2
    @Entity
      @Table(name = "students")
    public record Student(
-			  @Id Integer id,
-			  @Size(max = 50) ArrayList<Character> fullName,
-			  @Size(max = 50) ArrayList<Character> major
+			  @Id Integer ID,
+			  @Size(max = 50) ArrayList<Character> FULL_NAME,
+			  @Size(max = 50) ArrayList<Character> MAJOR
 			  )
 	 {
 	 }
