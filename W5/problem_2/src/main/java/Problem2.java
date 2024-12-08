@@ -1,4 +1,4 @@
-package a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database;
+package problem_2;
 
 import io.ebean.Model;
 import jakarta.persistence.Entity;
@@ -14,15 +14,15 @@ import java.util.stream.Stream;
 public class Problem2
 {
    @Entity
-     @Table(name = "students")
-   public record Student(
-			  @Id Integer ID,
-			  @Size(max = 50) ArrayList<Character> FULL_NAME,
-			  @Size(max = 50) ArrayList<Character> MAJOR
-			  )
-	 {
-	 }
-	    
+     @Table(name="students")
+     public record Student(
+			   @Id Integer ID,
+			   @Size(max = 50) ArrayList<Character> FULL_NAME,
+			   @Size(max = 50) ArrayList<Character> MAJOR
+			   )
+       {
+       }
+
    public static void main(String[] args)
      {
 	final Database AN_SQLITE_DATABASE = Database.builder()

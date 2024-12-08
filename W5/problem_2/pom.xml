@@ -3,20 +3,20 @@
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database</groupId>
-  <artifactId>problem-2</artifactId>
+  <groupId>w5</groupId>
+  <artifactId>a-java-program-that-reads-and-displays-student-records-stored-in-an-sqlite-database</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
     <maven.compiler.source>23</maven.compiler.source>
     <maven.compiler.target>23</maven.compiler.target>
   </properties>
-
+  
   <dependencies>
     <dependency>
       <groupId>org.xerial</groupId>
       <artifactId>sqlite-jdbc</artifactId>
-      <version>3.47.0.0</version>
+      <version>3.47.1.0</version>
     </dependency>
     <dependency>
       <groupId>io.ebean</groupId>
@@ -41,7 +41,7 @@
 	    <id>main</id>
 	    <phase>process-classes</phase>
 	    <configuration>
-	      <transformArgs>debug=1</transformArgs>
+	      <transformArgs>debug=9</transformArgs>
 	    </configuration>
 	    <goals>
 	      <goal>enhance</goal>
@@ -55,7 +55,7 @@
 	<artifactId>exec-maven-plugin</artifactId>
 	<version>3.5.0</version>
 	<configuration>
-	  <mainClass>a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database.Problem2</mainClass>
+	  <mainClass>problem_2.Problem2</mainClass>
 	</configuration>
       </plugin>
     </plugins>

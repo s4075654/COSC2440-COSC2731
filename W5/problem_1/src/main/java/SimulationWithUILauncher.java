@@ -1,5 +1,3 @@
-package a_maven_project.your_application;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

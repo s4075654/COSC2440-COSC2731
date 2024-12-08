@@ -1,5 +1,3 @@
-package a_maven_project.your_application;
-
 import java.util.Map;
 
 import com.massisframework.massis.model.agents.HighLevelController;

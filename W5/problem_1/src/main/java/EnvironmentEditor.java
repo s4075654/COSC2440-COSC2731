@@ -1,5 +1,3 @@
-package a_maven_project.your_application;
-
 import java.util.Arrays;
 import java.util.List;
 

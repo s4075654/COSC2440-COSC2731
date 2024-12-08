@@ -1,3 +1,6 @@
 [submodule "assignment_1"]
 	path = assignment_1
 	url = https://github.com/RMIT-Vietnam-Teaching/further-programming-assignment-1-build-a-console-app-s4075654.git
+[submodule "assignment_2"]
+	path = assignment_2
+	url = https://github.com/RMIT-Vietnam-Teaching/further-programming-assignment-2-build-a-backend-sg-group5
