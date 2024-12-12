@@ -1,0 +1,6 @@
+[submodule "ass_1"]
+	path = ass_1
+	url = https://github.com/RMIT-Vietnam-Teaching/further-programming-assignment-1-build-a-console-app-s4075654
+[submodule "ass_2"]
+	path = ass_2
+	url = https://github.com/RMIT-Vietnam-Teaching/further-programming-assignment-2-build-a-backend-sg-group5
