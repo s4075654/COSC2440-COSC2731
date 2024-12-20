@@ -2,3 +2,4 @@ db.json
 bun.lockb
 node_modules/
 target/
+pom.xml.versionsBackup
