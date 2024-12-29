@@ -57,7 +57,7 @@ final class RMITStudent
      }
 }
 
-final class Problem3
+final class ClientCode
 {
    final private static RMITStudent A_STUDENT = new RMITStudent();
    public static void main(String[] args)

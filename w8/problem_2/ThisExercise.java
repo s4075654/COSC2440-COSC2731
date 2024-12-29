@@ -22,7 +22,7 @@ final class Cat extends Animal
        }
 }
 
-final public class Problem2
+final public class ThisExercise
 {
    final private static Animal[] PARAMETERS = new Animal[]
      {

@@ -1,6 +1,6 @@
 import java.time.LocalTime;
 
-final class Problem1 implements Runnable
+final class ThreadThatDisplaysTheCurrentTimeToTheConsoleEverySecond implements Runnable
 {
    @Override
      public void run()

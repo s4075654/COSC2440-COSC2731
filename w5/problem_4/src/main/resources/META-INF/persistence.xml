@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+    
+  <persistence-unit name="default">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database.Problem2.Student</class>
+    <properties>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite::resource:university.db"/>
+      <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+    </properties>
+  </persistence-unit>
+</persistence>

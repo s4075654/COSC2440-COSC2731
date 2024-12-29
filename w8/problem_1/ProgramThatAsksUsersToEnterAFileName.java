@@ -2,9 +2,10 @@ import java.util.Scanner;
 import java.nio.file.Path;
 import java.nio.file.Files;
 
-final public class Problem1
+final class ProgramThatAsksUsersToEnterAFileName
 {
    private static Scanner enter = new Scanner(System.in);
+   
    public static void main(String[] args)
      {
 	System.out.println("Enter a file name:");

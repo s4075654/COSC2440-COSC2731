@@ -5,12 +5,12 @@ final class Lecturer
    Object projectLed;
 }
 
-final class Problem2 implements Runnable
+final class Code implements Runnable
 {
    private Lecturer lecturer;
    private Object newProject;
    
-   Problem2()
+   Code()
      {
 	lecturer = new Lecturer();
      }
@@ -29,8 +29,8 @@ final class Problem2 implements Runnable
      {
 	final Thread[] PROVE_IT_USING_CODE = new Thread[]
 	  {
-	     new Thread(new Problem2()),
-	     new Thread(new Problem2())
+	     new Thread(new Code()),
+	     new Thread(new Code())
 	  }
 	;
 	Arrays.stream(PROVE_IT_USING_CODE)

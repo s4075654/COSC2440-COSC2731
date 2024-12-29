@@ -1,0 +1,38 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>problem4</groupId>
+  <artifactId>a-java-jpa-program-that-persists-student-objects</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>org.eclipse.persistence.jpa</artifactId>
+      <version>4.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.47.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>problem2</groupId>
+      <artifactId>a-java-program-that-reads-and-displays-student-records-stored-in-an-sqlite-database</artifactId>
+      <version>1</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>exec-maven-plugin</artifactId>
+	<version>3.5.0</version>
+	<configuration>
+	  <mainClass>JavaJpaProgramThatPersistsStudentObjects</mainClass>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

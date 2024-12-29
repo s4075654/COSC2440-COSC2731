@@ -42,7 +42,7 @@ final class Person extends Thread
    
 }
 
-final class Problem3
+final class MultithreadingJavaProgramToSimulateThe
 {  
    final private static int N = 2;
    final private static Person[] N_PEOPLE = new Person[N];
