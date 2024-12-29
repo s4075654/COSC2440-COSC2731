@@ -3,7 +3,7 @@ package controllers;
 import org.springframework.context.annotation.RestController;
 
 @RestController
-final class LibraryController
+  final class LibraryController
 {
    final void add(final SubLibrary[] SUB);
    final void update(final SubLibrary[] SUB);

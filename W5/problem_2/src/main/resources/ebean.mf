@@ -1,2 +1,2 @@
-entity-packages: problem_2
-transactional-packages: problem_2
+entity-packages: a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database
+transactional-packages: a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database

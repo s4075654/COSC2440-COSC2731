@@ -1,9 +1,8 @@
-import problem_2.Problem2;
+import a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database.Problem2;
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.stream.Stream;
-import java.util.List;
-import io.ebean.Database;
-import io.ebean.DatabaseBuilder;
+import io.ebean.UpdateQuery;
 import io.ebean.DB;
 
 final public class AllowingUsersToEnterAStringAndDisplayTheStudentsWhoseNamesMatchTheProvidedInput extends Problem2
@@ -14,34 +13,25 @@ final public class AllowingUsersToEnterAStringAndDisplayTheStudentsWhoseNamesMat
      {
 	return SCANNER.nextLine();
      }
-   final private static void displayTheStudentsWhoseNamesMatchTheProvidedInput(final List<Character> THE_PROVIDED_INPUT)
+   final private static void displayTheStudentsWhoseNamesMatchTheProvidedInput(final char[] THE_PROVIDED_INPUT)
      {
 	SCANNER.close();
 	try (final Stream<Student> STUDENT_RECORDS = DB.find(Student.class)
 	     .findStream())
 	  {
 	     STUDENT_RECORDS.parallel()
-	       .forEach(studentRecord -> System.out.println((studentRecord.FULL_NAME().equals(THE_PROVIDED_INPUT)) ? studentRecord : ""));
+	       .forEach(studentRecord -> System.out.print((Arrays.equals(studentRecord.fullName(), THE_PROVIDED_INPUT)) ? studentRecord + "\n" : ""));
 	  }
      }
    
-   final private static int updateStudentData()
+   final private static UpdateQuery<Student> updateStudentData()
      {
-	return DB.find(Student.class).update();
+	return DB.update(Student.class);
      }
    
    public static void main(String[] args)
      {
-	final Database AN_SQLITE_DATABASE = Database.builder()
-	  .name("an_sqlite_database")
-	    .loadFromProperties()
-	      .defaultDatabase(true)
-		.addClass(Student.class)
-		  .build();
-	
-	displayTheStudentsWhoseNamesMatchTheProvidedInput(enterAString().chars()
-							  .mapToObj(character -> (char)character)
-							  .toList());
+	displayTheStudentsWhoseNamesMatchTheProvidedInput(enterAString().toCharArray());
 	System.out.println(updateStudentData());
      }
 }

@@ -1,0 +1,6 @@
+datasource:
+	db:
+		url: jdbc:sqlite::resource:university.db
+		username: s4075654
+		password: ${password}
+		driver: org.sqlite.JDBC

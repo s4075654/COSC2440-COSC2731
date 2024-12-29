@@ -1,15 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>w5</groupId>
+  <groupId>problem2</groupId>
   <artifactId>a-java-program-that-reads-and-displays-student-records-stored-in-an-sqlite-database</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1</version>
 
   <properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>18</maven.compiler.source>
+    <maven.compiler.target>18</maven.compiler.target>
   </properties>
   
   <dependencies>
@@ -22,11 +20,6 @@
       <groupId>io.ebean</groupId>
       <artifactId>ebean-sqlite</artifactId>
       <version>15.8.0</version>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.validation</groupId>
-      <artifactId>jakarta.validation-api</artifactId>
-      <version>3.1.0</version>
     </dependency>
   </dependencies>
 
@@ -41,21 +34,20 @@
 	    <id>main</id>
 	    <phase>process-classes</phase>
 	    <configuration>
-	      <transformArgs>debug=9</transformArgs>
+	      <transformArgs>debug=1</transformArgs>
 	    </configuration>
 	    <goals>
 	      <goal>enhance</goal>
 	    </goals>
 	  </execution>
 	</executions>
-	<extensions>true</extensions>
       </plugin>
       <plugin>
 	<groupId>org.codehaus.mojo</groupId>
 	<artifactId>exec-maven-plugin</artifactId>
 	<version>3.5.0</version>
 	<configuration>
-	  <mainClass>problem_2.Problem2</mainClass>
+	  <mainClass>a_java_program_that_reads_and_displays_student_records_stored_in_an_sqlite_database.Problem2</mainClass>
 	</configuration>
       </plugin>
     </plugins>

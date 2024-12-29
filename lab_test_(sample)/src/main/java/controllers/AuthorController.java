@@ -3,9 +3,9 @@ package controllers;
 import org.springframework.context.annotation.RestController;
 
 @RestController
-final class AuthorController
+  final class AuthorController
 {
-   private static enum class NameOrAcademicCredentials
+   private static enum NameOrAcademicCredentials
      {
 	NAME, ACADEMIC_CREDENTIALS
      }

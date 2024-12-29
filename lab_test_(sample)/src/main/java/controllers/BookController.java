@@ -4,7 +4,7 @@ import org.springframework.context.annotation.RestController;
 import java.util.Date;
 
 @RestController
-final class BookController
+  final class BookController
 {
    final void add(final Book[] BOOKS);
    final void update(final Book[] BOOKS);
