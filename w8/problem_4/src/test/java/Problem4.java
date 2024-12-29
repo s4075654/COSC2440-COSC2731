@@ -7,13 +7,13 @@ final class Problem4
    private RMITStudent student;
    
    @BeforeEach
-     final private void construct()
+     final void construct()
        {
 	  student = new RMITStudent();
        }
    
    @Test
-     final private void throwCourseException()
+     final void throwCourseException()
        {
 	  assertThrows(CourseException.class, () ->
 		       {
@@ -26,7 +26,7 @@ final class Problem4
 		       );
        }
    @Test
-     final private void throwMarkException()
+     final void throwMarkException()
        {
 	  assertThrows(MarkException.class, () -> student.updateCourse("course", -1));
 	  assertThrows(MarkException.class, () -> student.updateCourse("code", 101));

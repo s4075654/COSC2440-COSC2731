@@ -1,16 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>w8</groupId>
-  <artifactId>problem-4</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
-  <properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-  </properties>
+  <groupId>problem4</groupId>
+  <artifactId>a-few-test-cases-for-updateCourse</artifactId>
+  <version>1</version>
 
   <dependencies>
     <dependency>
