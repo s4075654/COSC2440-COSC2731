@@ -1,7 +1,0 @@
-spring:
-	datasource:
-		driver-class-name: org.monetdb.jdbc.MonetDriver
-		url: jdbc:monetdb://localhost/demo?user=monetdb&password=monetdb
-	jpa:
-		hibernate:
-			ddl-auto: create

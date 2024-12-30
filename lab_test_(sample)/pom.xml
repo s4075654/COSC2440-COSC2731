@@ -3,12 +3,7 @@
 
   <groupId>final</groupId>
   <artifactId>programming</artifactId>
-  <version>40 marks</version>
-
-  <!--<properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-  </properties>-->
+  <version>1</version>
 
   <repositories>
     <repository>
@@ -34,10 +29,12 @@
       <version>11.19.15</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.1.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
+
+  <packaging>war</packaging>
 </project>

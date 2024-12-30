@@ -1,0 +1,5 @@
+enum Order
+{
+   DESCENDING,
+     ASCENDING
+}

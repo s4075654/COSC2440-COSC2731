@@ -1,5 +1,3 @@
-package entities;
-
 interface EntitiesClass
 {
 }
