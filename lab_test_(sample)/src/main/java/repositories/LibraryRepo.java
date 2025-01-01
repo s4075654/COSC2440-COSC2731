@@ -1,8 +1,10 @@
+import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
 import java.util.List;
 import java.util.Arrays;
 
-final class LibraryRepo
+@Repository
+  final class LibraryRepo
 {
    final private static Session SESSION = SessionUtility.getInstance().FACTORY.openSession();
    private static List<SubLibrary> searchResults;
@@ -21,7 +23,7 @@ final class LibraryRepo
      {
 	SESSION.beginTransaction();
 	Arrays.stream(SUB_LIBRARIES)
-	  .forEach(subLibrary -> SESSION.update(subLibrary));
+	  .forEach(SESSION::merge);
 	SESSION.getTransaction().commit();
 	
 	SESSION.close();

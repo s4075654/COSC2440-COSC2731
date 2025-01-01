@@ -1,8 +1,10 @@
+import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
 import java.util.List;
 import java.util.Arrays;
 
-final class AuthorRepo
+@Repository
+  final class AuthorRepo
 {
    final private static Session SESSION = SessionUtility.getInstance().FACTORY.openSession();
    private static List<Author> searchResults;
@@ -21,7 +23,7 @@ final class AuthorRepo
      {
 	SESSION.beginTransaction();
 	Arrays.stream(AUTHORS)
-	  .forEach(SESSION::update);
+	  .forEach(SESSION::merge);
 	SESSION.getTransaction().commit();
 	
 	SESSION.close();
@@ -31,7 +33,7 @@ final class AuthorRepo
      {
 	SESSION.beginTransaction();
 	Arrays.stream(AUTHORS)
-	  .forEach(SESSION::delete);
+	  .forEach(SESSION::remove);
 	SESSION.getTransaction().commit();
 	
 	SESSION.close();

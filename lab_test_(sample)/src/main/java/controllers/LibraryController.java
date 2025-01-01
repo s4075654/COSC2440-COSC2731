@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-  @RequestMapping("/")
+  @RequestMapping("/sub-libraries")
   final class LibraryController
 {
    @Autowired
-     final private LibraryService SERVICE;
+     private LibraryService service;
    
-   @PostMapping("/sub-libraries")
+   @PostMapping("/add")
      final ResponseEntity<SubLibrary[]> add(@RequestBody final SubLibrary[] SUB_LIBRARIES)
        {
 	  return ResponseEntity.status(HttpStatus.CREATED)
-	    .body(SERVICE.add(SUB_LIBRARIES));
+	    .body(service.add(SUB_LIBRARIES));
        }
-   @PutMapping("/sub-libraries")
+   @PutMapping("/update")
      final ResponseEntity<SubLibrary[]> update(@RequestBody final SubLibrary[] SUB_LIBRARIES)
        {
-	  return ResponseEntity.ok(SERVICE.update(SUB_LIBRARIES));
+	  return ResponseEntity.ok(service.update(SUB_LIBRARIES));
        }
-   @GetMapping("/sub-libraries")
+   @GetMapping("/search-by")
      final SubLibrary[] searchBy(@RequestParam final String SUBJECT, @RequestParam final Order ORDER)
        {
-	  return SERVICE.searchBy(SUBJECT, ORDER);
+	  return service.searchBy(SUBJECT, ORDER);
        }
 }

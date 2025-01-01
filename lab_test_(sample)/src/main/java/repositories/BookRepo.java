@@ -1,9 +1,11 @@
+import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
 import java.util.List;
 import java.util.Arrays;
 import java.time.LocalDate;
 
-final class BookRepo
+@Repository
+  final class BookRepo
 {
    final private static Session SESSION = SessionUtility.getInstance().FACTORY.openSession();
    private static List<Book> searchResults;
@@ -22,7 +24,7 @@ final class BookRepo
      {
 	SESSION.beginTransaction();
 	Arrays.stream(BOOKS)
-	  .forEach(book -> SESSION.update(book));
+	  .forEach(SESSION::merge);
 	SESSION.getTransaction().commit();
 	
 	SESSION.close();
@@ -32,7 +34,7 @@ final class BookRepo
      {
 	SESSION.beginTransaction();
 	Arrays.stream(BOOKS)
-	  .forEach(book -> SESSION.delete(book));
+	  .forEach(SESSION::remove);
 	SESSION.getTransaction().commit();
 	
 	SESSION.close();

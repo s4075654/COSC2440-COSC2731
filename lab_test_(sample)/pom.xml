@@ -37,4 +37,29 @@
   </dependencies>
 
   <packaging>war</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-antrun-plugin</artifactId>
+	<version>3.1.0</version>
+	<executions>
+	  <execution>
+	    <phase>package</phase>
+	    <goals>
+	      <goal>run</goal>
+	    </goals>
+	    <configuration>
+	      <target>
+		<move file="${project.build.directory}/${project.build.finalName}.war"
+		      toFile="${env.USERPROFILE}/scoop/apps/tomcat/current/webapps/${project.build.finalName}.war"
+		      overwrite="true"/>
+	      </target>
+	    </configuration>
+	  </execution>
+	</executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

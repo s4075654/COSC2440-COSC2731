@@ -11,32 +11,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-  @RequestMapping("/")
+  @RequestMapping("/books")
   final class BookController
 {
    @Autowired
-     final private BookService SERVICE;
+     private BookService service;
    
-   @PostMapping("/books")
+   @PostMapping("/add")
      final ResponseEntity<Book[]> add(@RequestBody final Book[] BOOKS)
        {
 	  return ResponseEntity.status(HttpStatus.CREATED)
-	    .body(SERVICE.add(BOOKS));
+	    .body(service.add(BOOKS));
        }
-   @PutMapping("/books")
+   @PutMapping("/update")
      final ResponseEntity<Book[]> update(@RequestBody final Book[] BOOKS)
        {
-	  return ResponseEntity.ok(SERVICE.update(BOOKS));
+	  return ResponseEntity.ok(service.update(BOOKS));
        }
-   @DeleteMapping("/books")
+   @DeleteMapping("/delete")
      final ResponseEntity<Void> delete(@RequestBody final Book[] BOOKS)
        {
-	  SERVICE.delete(BOOKS);
+	  service.delete(BOOKS);
 	  return ResponseEntity.noContent().build();
        }
-   @GetMapping("/books")
+   @GetMapping("/search-by")
      final Book[] searchBy(@RequestParam final Object NAME_OR_THE_CREATED_DATE, @RequestParam final Order ORDER)
        {
-	  return SERVICE.searchBy(NAME_OR_THE_CREATED_DATE, ORDER);
+	  return service.searchBy(NAME_OR_THE_CREATED_DATE, ORDER);
        }
 }

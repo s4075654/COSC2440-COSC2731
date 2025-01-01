@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-  @RequestMapping("/")
+  @RequestMapping("/authors")
   final class AuthorController
 {
    @Autowired
      private AuthorService service;
    
-   @PostMapping("/authors")
+   @PostMapping("/add")
      final ResponseEntity<Author[]> add(@RequestBody final Author[] AUTHORS)
        {
 	  return ResponseEntity.status(HttpStatus.CREATED)
 	    .body(service.add(AUTHORS));
        }
-   @PutMapping("/authors")
+   @PutMapping("/update")
      final ResponseEntity<Author[]> update(@RequestBody final Author[] AUTHORS)
        {
 	  return ResponseEntity.ok(service.update(AUTHORS));
        }
-   @DeleteMapping("/authors")
+   @DeleteMapping("/delete")
      final ResponseEntity<Void> delete(@RequestBody final Author[] AUTHORS)
        {
 	  service.delete(AUTHORS);
 	  return ResponseEntity.noContent().build();
        }
-   @GetMapping("/authors")
+   @GetMapping("/search")
      final Author[] search(@RequestParam final NameOrAcademicCredentials BY, @RequestParam final String NAME_OR_ACADEMIC_CREDENTIALS, @RequestParam final Order ORDER)
        {
 	  return service.search(BY, NAME_OR_ACADEMIC_CREDENTIALS, ORDER);

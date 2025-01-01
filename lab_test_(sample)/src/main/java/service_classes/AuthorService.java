@@ -1,27 +1,32 @@
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Arrays;
 import java.util.Collections;
 
-final class AuthorService
+@Service
+  final class AuthorService
 {
-   final private static AuthorRepo REPOSITORY = new AuthorRepo();
+   @Autowired
+     private AuthorRepo repository;
+   
    private static Author[] searchResults;
    
    final Author[] add(final Author[] AUTHORS)
      {
-	return REPOSITORY.add(AUTHORS);
+	return repository.add(AUTHORS);
      }
    final Author[] update(final Author[] AUTHORS)
      {
-	return REPOSITORY.update(AUTHORS);
+	return repository.update(AUTHORS);
      }
    final void delete(final Author[] AUTHORS)
      {
-	REPOSITORY.delete(AUTHORS);
+	repository.delete(AUTHORS);
      }
    
    final Author[] search(final NameOrAcademicCredentials BY, final String NAME_OR_ACADEMIC_CREDENTIALS, final Order ORDER)
      {
-	searchResults = (BY == NameOrAcademicCredentials.NAME) ? REPOSITORY.searchByName(NAME_OR_ACADEMIC_CREDENTIALS) : REPOSITORY.searchByAcademicCredentials(NAME_OR_ACADEMIC_CREDENTIALS);
+	searchResults = (BY == NameOrAcademicCredentials.NAME) ? repository.searchByName(NAME_OR_ACADEMIC_CREDENTIALS) : repository.searchByAcademicCredentials(NAME_OR_ACADEMIC_CREDENTIALS);
 	switch (ORDER)
 	  {
 	   case DESCENDING:

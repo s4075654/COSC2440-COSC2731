@@ -8,6 +8,17 @@ final class SessionUtility
    
    SessionUtility()
      {
+	try
+	  {
+	     Class.forName("org.monetdb.jdbc.MonetDriver");
+	     System.out.println("reached.");
+	  }
+	catch (final Exception EXCEPTION)
+	  {
+	     System.out.println("failed.");
+	     EXCEPTION.printStackTrace();
+	  }
+	
 	Configuration configuration = new Configuration();
 	
 	configuration.setProperty("hibernate.connection.driver_class", "org.monetdb.jdbc.MonetDriver");
