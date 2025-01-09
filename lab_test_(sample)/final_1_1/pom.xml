@@ -1,7 +1,7 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>final</groupId>
+  <groupId>final.11</groupId>
   <artifactId>programming</artifactId>
   <version>1</version>
 
@@ -53,7 +53,7 @@
 	    <configuration>
 	      <target>
 		<move file="${project.build.directory}/${project.build.finalName}.war"
-		      toFile="${env.USERPROFILE}/scoop/apps/tomcat/current/webapps/${project.build.finalName}.war"
+		      toFile="${env.USERPROFILE}/.sdkman/candidates/tomcat/current/webapps/${project.build.finalName}.war"
 		      overwrite="true"/>
 	      </target>
 	    </configuration>
